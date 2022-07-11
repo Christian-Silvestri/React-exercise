@@ -1,4 +1,5 @@
 import React from "react";
+import { Age } from "./Age";
 import { Hello } from "./Hello";
 import { Welcome } from "./Welcome";
 
@@ -7,8 +8,8 @@ export class App extends React.Component {
         return (
             <div>
                 <Hello />
-                <Welcome age = {35} 
-                name = {<strong>Christian</strong>}/>
+                <Welcome name = {<strong>Christian</strong>}/>
+                <Age age = {35} />
             </div>
         )
     }
