@@ -1,5 +1,5 @@
 import React from "react";
-import { Age } from "./Age";
+
 
 export class Welcome extends React.Component {
  
@@ -7,7 +7,7 @@ export class Welcome extends React.Component {
         return (
             <div>
                 <p>Welcome, {this.props.name} !</p>
-                <Age />
+                
             </div>
         )
     }
