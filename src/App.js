@@ -9,10 +9,13 @@ export class App extends React.Component {
         return (
             <div>
                 <Hello />
-                <Welcome name = 'Jhon'
-                age = {20}/>
-                <Counter />
-                
+                <Welcome name='Jhon'
+                    age={20} />
+                <Counter
+                    initialValue={35}
+                    incrementValue={5}
+                    interval={2000} />
+
             </div>
         )
     }
