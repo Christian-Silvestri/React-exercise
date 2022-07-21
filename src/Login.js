@@ -20,18 +20,30 @@ class Login extends React.Component {
     }
 
     OnLogin = () => {
+
         console.log(this.state)
+    }
+
+    handleResetButton = () => {
+        
+        this.setState({
+            username: '',
+            password: '',
+            remember: false,
+        })
     }
 
     render() {
         return (
             <div>
+
                 <input
                     name='username'
                     value={this.state.username}
                     placeholder='username'
                     onChange={this.handleInputChange}
                 />
+
                 <input
                     name='password'
                     type='password'
@@ -39,17 +51,24 @@ class Login extends React.Component {
                     placeholder='password'
                     onChange={this.handleInputChange}
                 />
+
                 <input
                     name='remember'
                     type='checkbox'
                     value={this.state.remember}
                     onChange={this.handleInputChange}
                 />
+
                 <button
                     type='submit'
                     disabled={!this.state.username || !this.state.password}
                     onClick={this.OnLogin}>
                     Login
+                </button>
+
+                <button
+                    onClick={this.handleResetButton}>
+                    Reset
                 </button>
             </div>
         )
