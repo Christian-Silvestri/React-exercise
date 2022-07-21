@@ -38,7 +38,7 @@ class Login extends React.Component {
                 <input
                     name='remember'
                     type='checkbox'
-                    value={this.state.remember}
+                    checked={this.state.remember}
                     onChange={this.handleInputChange}
                 />
             </div>
