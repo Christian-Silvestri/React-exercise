@@ -34,6 +34,11 @@ class UncontrolledLogin extends React.Component {
             remember: !username & !password
         })
     }
+
+    componentDidMount() {
+        this._formRef.current.elements.username.focus()
+    }
+
     render() {
         return (
             <div>
