@@ -17,7 +17,12 @@ class UncontrolledLogin extends React.Component {
         const password = event.target.elements.password.value
         const remember = event.target.elements.remember.checked
 
-        this.props.onLogin({ username, password, remember })
+        console.log({
+            username,
+            password,
+            remember
+        })
+
     }
 
     handleInputChange = () => {
@@ -32,7 +37,8 @@ class UncontrolledLogin extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleFormSubmit}>
+                <form onSubmit={this.handleFormSubmit}
+                    ref={this._formRef}>
                     <input
                         name='username'
                         onChange={this.handleInputChange}
