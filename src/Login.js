@@ -19,6 +19,10 @@ class Login extends React.Component {
         })
     }
 
+    OnLogin = () => {
+        console.log(this.state)
+    }
+
     render() {
         return (
             <div>
@@ -41,6 +45,12 @@ class Login extends React.Component {
                     value={this.state.remember}
                     onChange={this.handleInputChange}
                 />
+                <button
+                    type='submit'
+                    disabled={!this.state.username || !this.state.password}
+                    onClick={this.OnLogin}>
+                    Login
+                </button>
             </div>
         )
     }
