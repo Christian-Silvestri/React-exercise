@@ -28,6 +28,14 @@ class TodoList extends React.Component {
         })
     }
 
+    handleRemoveItem = (element) => {
+        this.setState((state) => {
+			return {
+				todos: state.todos.filter((todo, index) => index !== element),
+			}
+		})
+    }
+
 
     render() {
 
@@ -55,7 +63,7 @@ class TodoList extends React.Component {
                 <ul>
                     {this.state.todos.map((todo, index) =>
                         <li key={index}>
-                            {todo}
+                            {todo} <button onClick={() => this.handleRemoveItem(index)}>REMOVE</button>
                         </li>)}
                 </ul>
             </div>
