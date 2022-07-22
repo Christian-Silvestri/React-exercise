@@ -22,6 +22,12 @@ class TodoList extends React.Component {
         })
     }
 
+    handleResetButton = () =>{
+        this.setState({
+            todos: [],
+        })
+    }
+
 
     render() {
 
@@ -38,6 +44,11 @@ class TodoList extends React.Component {
                     <button
                         type='submit'>
                         SUBMIT
+                    </button>
+
+                    <button 
+                    onClick={this.handleResetButton}>
+                        RESET
                     </button>
 
                 </form>
