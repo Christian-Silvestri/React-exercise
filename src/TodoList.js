@@ -13,6 +13,7 @@ class TodoList extends React.Component {
         event.preventDefault()
 
         const todo = event.target.elements.todo.value
+        event.target.elements.todo.value = ''
 
         this.setState((state) => {
             return {
