@@ -62,7 +62,8 @@ class Login extends React.Component {
                 <button
                     type='submit'
                     disabled={!this.state.username || !this.state.password}
-                    onClick={this.OnLogin}>
+                    onClick={this.OnLogin}
+                    style= {{backgroundColor: this.state.password.length <= 8 ? 'red' : 'green'}}>
                     Login
                 </button>
 
