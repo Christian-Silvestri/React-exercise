@@ -2,7 +2,7 @@ import React from "react";
 import { Age } from "./Age";
 
 
-export class Welcome extends React.Component {
+/* export class Welcome extends React.Component {
  
     render() {
         return (
@@ -12,6 +12,18 @@ export class Welcome extends React.Component {
             </div>
         )
     }
+} */
+
+function Welcome(props) {
+        return (
+            <div className='welcome'>
+                <p>Welcome, {props.name}!</p>
+                {props.age > 18 && props.age < 65 && props.name === 'Jhon' && <Age age = {props.age} /> }
+            </div>
+
+        )
 }
+
+export default Welcome
 
  
