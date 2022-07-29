@@ -22,7 +22,7 @@ class TodoList extends React.Component {
         })
     }
 
-    handleResetButton = () =>{
+    handleResetButton = () => {
         this.setState({
             todos: [],
         })
@@ -30,10 +30,10 @@ class TodoList extends React.Component {
 
     handleRemoveItem = (element) => {
         this.setState((state) => {
-			return {
-				todos: state.todos.filter((todo, index) => index !== element),
-			}
-		})
+            return {
+                todos: state.todos.filter((todo, index) => index !== element),
+            }
+        })
     }
 
 
@@ -54,21 +54,41 @@ class TodoList extends React.Component {
                         SUBMIT
                     </button>
 
-                    <button 
-                    onClick={this.handleResetButton}>
+                    <button
+                        onClick={this.handleResetButton}>
                         RESET
                     </button>
 
                 </form>
-                <ul>
-                    {this.state.todos.map((todo, index) =>
-                        <li key={index}>
-                            {todo} <button onClick={() => this.handleRemoveItem(index)}>REMOVE</button>
-                        </li>)}
-                </ul>
+                {this.props.render(this.state.todos, this.handleRemoveItem)}
             </div>
         )
     }
 }
 
-export default TodoList
+class Container extends React.Component {
+    render() {
+        return (
+            <TodoList
+                render={(todos, handleRemoveItem) => {
+                    return (
+                        <ul>
+                            {todos.map((todo, index) => (
+                                <li key={index}>
+                                    {todo}
+                                    <button
+                                        onClick={() => handleRemoveItem(index)}>
+                                        REMOVE
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    )
+                }}
+            />
+        )
+    }
+}
+
+
+export default Container
