@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-class Login extends React.Component {
+/* class Login extends React.Component {
     state = {
         username: '',
         password: '',
@@ -54,6 +54,35 @@ class Login extends React.Component {
             </div>
         )
     }
-}
+} */
 
+function Login() {
+
+    const [data, setData] = useState({
+        username: '',
+        password: '',
+        remember: false,
+    })
+
+    function handleInputChange(event) {
+        const {name, type, value, checked} = event.target
+
+        setData((data) => {
+            return {
+                ...data,
+                [name]: type === 'checkbox' ? checked : value,
+            }
+        })
+
+        console.log(data)
+    }
+
+    return (
+        <form>
+            <input name= 'username' value= {data.username} onChange= {handleInputChange} />
+            <input name= 'password' value= {data.password} onChange= {handleInputChange} type= 'password' />
+            <input name= 'remember' checked= {data.remember} onChange= {handleInputChange} type= 'checkbox' /> 
+        </form>
+    )
+}
 export default Login
