@@ -1,11 +1,12 @@
 import React from "react";
-import Login from './Login'
+import GithubUserList from "./GitHubUserList";
+
 
 export class App extends React.Component {
     render() {
         return (
             <div>
-               <Login />
+               <GithubUserList />
             </div>
         )
     }
