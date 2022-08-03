@@ -1,26 +1,28 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 
 function UseCounter() {
 	const [counter, setCounter] = useState(0)
 
-	function handleCounterIncrement() {
+	const increment = useCallback(function handleCounterIncrement() {
 		setCounter((c) => c + 1)
-	}
+	}, [])
 
-	function handleCounterDecrement() {
+	const decrement = useCallback(function handleCounterDecrement() {
 		setCounter((c) => c - 1)
-	}
+	}, [])
 
-	function handleCounterReset() {
+	const reset = useCallback(function handleCounterReset() {
 		setCounter(0)
-	}
+	}, [])
 
 	return {
 		counter: counter,
-		onIncrement: handleCounterIncrement,
-		onDecrement: handleCounterDecrement,
-		onReset: handleCounterReset,
+		onIncrement: increment,
+		onDecrement: decrement,
+		onReset: reset,
 	}
 }
 
 export default UseCounter
+
+
