@@ -19,7 +19,7 @@ function AppRouter() {
                 <Route path="/counter" element={<ClickCounter />} />
                 <Route path="/users" element={<GitHubUserList />}>
                     <Route path="/users/:username" element={<ShowGithubUser />} />
-                    <Route index element={<p>Add a user and select it</p>} />
+                    <Route index element={<p>Add user</p>} />
                 </Route>
                 <Route path="*" element={<p>Not Found</p>} />
             </Routes>
