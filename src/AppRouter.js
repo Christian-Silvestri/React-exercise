@@ -17,7 +17,7 @@ function AppRouter() {
                 <Route path="/" element={<Welcome name="Jimmy" />} />
                 <Route path="/counter" element={<ClickCounter />} />
                 <Route path="/users/:username" element={<ShowGithubUser />} />
-                <Route path="*" element={<p>Not Found</p>}></Route>
+                <Route path="*" element={<p>Not Found</p>} />
             </Routes>
             <Link to="/"><p>Home page</p></Link>
             <Link to="/counter"><p>Counter</p></Link>
