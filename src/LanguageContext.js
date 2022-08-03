@@ -1,16 +1,16 @@
-import React, { createContext } from 'react'
+import { useContext, createContext } from 'react'
 
-export const LanguageContext = createContext('en')
+const LanguageContext = createContext('en')
 
-export class DisplayLanguage extends React.Component {
-    
-    render() {
-
-        return (
-            <LanguageContext.Consumer>
-                {(language) => <h1>{language}</h1>}
-            </LanguageContext.Consumer>
-        )
-    }
+function DisplayLanguage() {
+    const language = useContext(LanguageContext)
+    return (
+        <div>
+            <h1>{language}</h1>
+        </div>
+    )
 }
+export default DisplayLanguage
+
+
 

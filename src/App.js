@@ -1,12 +1,12 @@
 import React from "react";
-import CarDetails from "./CarDetails";
+import DisplayLanguage from "./LanguageContext";
 
 
 export class App extends React.Component {
     render() {
         return (
             <div>
-               <CarDetails />
+               <DisplayLanguage />
             </div>
         )
     }
