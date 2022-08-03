@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export function GitHubUser({ username }) {
+function GitHubUser({ username }) {
 	const [data, setData] = useState([])
 
 	useEffect(() => {
@@ -16,3 +16,5 @@ export function GitHubUser({ username }) {
         </>
     )
 }
+
+export default GitHubUser
