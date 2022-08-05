@@ -1,18 +1,14 @@
 import React from "react";
-import AppRouter from './AppRouter'
-import { BrowserRouter } from "react-router-dom";
+import FilteredList from "./FilteredList";
 
 
-class App extends React.Component {
+export class App extends React.Component {
     render() {
         return (
-            <BrowserRouter>
-               <AppRouter />
-            </BrowserRouter>
+            <div>
+               <FilteredList />
+            </div>
         )
     }
 
 }
-
-export default App
-
