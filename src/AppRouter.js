@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import { useParams, Link } from 'react-router-dom';
 import Welcome from './Welcome'
 import ClickCounter from './ClickCounter'
@@ -31,15 +31,6 @@ function AppRouter() {
 
 }
 
-function Container() {
 
-    return (
 
-        <Router>
-            <AppRouter />
-        </Router>
-    )
-
-}
-
-export default Container
+export default AppRouter
