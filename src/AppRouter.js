@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import {useParams} from 'react-router-dom';
 import Welcome from './Welcome'
 import ClickCounter from './ClickCounter'
@@ -26,11 +26,13 @@ function Container() {
 
     return (
 
-        <Router>
+        <BrowserRouter>
             <AppRouter />
-        </Router>
+        </BrowserRouter>
     )
 
 }
+
+//Reinderizzo container all'interno del file index.js
 
 export default Container
