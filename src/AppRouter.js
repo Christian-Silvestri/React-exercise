@@ -1,8 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-<<<<<<< HEAD
 import { useParams, Link } from 'react-router-dom';
-=======
->>>>>>> react-router-01
 import Welcome from './Welcome'
 import ClickCounter from './ClickCounter'
 import GithubUser from './GitHubUser'
